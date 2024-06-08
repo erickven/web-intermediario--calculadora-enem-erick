@@ -37,8 +37,9 @@
 		return calcularScoreFinal(simuArr);
 	}
 </script>
-<body class="bg-slate-950 m-0 p-0 text-white-500 text-xl text-zinc-200">
-<div class="bg-slate-900 py-3"><h1 class="text-2xl px-4"><strong>Calculadora do ENEM</strong></h1></div>
+<body class="bg-slate-950 text-white-500 text-xl text-zinc-200 flex-col space-between">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="bg-slate-900 py-3 sm:max-lg:h-12"><h1 class="text-2xl px-4"><strong>Calculadora do ENEM</strong></h1></div>
 <p class="py-3 px-4 mb-12">
 	Esta calculadora serve para você entender que se tivesse aprendido matemática não teria tirado
 	essa nota paia 💩
@@ -49,11 +50,11 @@
 		<th>Prova do Enem</th><th>Nota mínima</th><th>Sua nota</th><th>Peso</th><th>Nota com peso</th>
 	</tr>
 	{#each arr as materia}
-		<tr>
-			<td>{materia.prova}</td>
-			<td class="shadow-lg shadow-slate-700"><input type="number" placeholder="0.01" bind:value={materia.minGrade} /></td>
-			<td class="shadow-lg shadow-slate-700"><input type="number" placeholder="780.00" bind:value={materia.nota} /></td>
-			<td class="shadow-lg shadow-slate-700"><input type="number" placeholder="1.50" bind:value={materia.peso} /></td>
+		<tr class="sm:max-xl:table-fixed text-center">
+			<td class="">{materia.prova}</td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col bg-slate-600 m-1 sm:max-lg:h-16" placeholder="0.01" bind:value={materia.minGrade} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-slate-600 sm:max-lg:h-16" placeholder="780.00" bind:value={materia.nota} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-slate-600 sm:max-lg:h-16" placeholder="1.50" bind:value={materia.peso} /></td>
 			<td>{calcularNota(materia)}</td>
 		</tr>
 	{/each}
@@ -67,7 +68,7 @@
 	<td><i>Nota do estudante (B/A) = {calcularScoreFinal(arr).toFixed(2)}</i></td>
 </table>
 </div>
-<div id="resultado" class="variant-ringed-surface pt-3 text-center bg-slate-900 rounded-xl mt-20">
+<div id="resultado" class="sm:max-xl:mt-72 mr-0 variant-ringed-surface pt-3 text-center bg-slate-900 rounded-xl mt-12 h-screen text-2xl sm:max-lg:text-4xl">
 <h3>Com base nos dados entre 2020 e 2023</h3>
 {#each mathGrade as m}
 	<p>Caso você tivesse acertado {m[0]} questões em matemática sua nota seria:</p>
