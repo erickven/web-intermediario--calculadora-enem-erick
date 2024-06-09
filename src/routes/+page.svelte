@@ -37,15 +37,15 @@
 		return calcularScoreFinal(simuArr);
 	}
 </script>
-<body class="text-tertiary-500 text-xl flex-col space-between sm:max-md:flex-row" data-theme="gold-nouveau">
+<body class="text-tertiary-500 text-xl flex-col space-between" data-theme="gold-nouveau">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="bg-surface-700 py-5 sm:max-lg:h-12 w-screen fixed-top"><h1 class="text-2xl px-4"><strong>Calculadora do ENEM</strong></h1></div>
+<div class="bg-surface-100-800-token py-5 sm:max-lg:h-12 w-screen fixed-top"><h1 class="text-2xl px-4 font-serif"><strong>Calculadora do ENEM</strong></h1></div>
 <p class="py-3 px-4 mb-12">
 	Esta calculadora serve para você entender que se tivesse aprendido matemática não teria tirado
 	essa nota paia 💩
 </p>
-<div id="tabelas" class="pl-7 mb-12 flex-center">
-<table class="border-2 border-surface-700 border-collapse">
+<div id="tabelas" class="pl-7 mb-12 inline-block">
+<table class="border-2 border-surface-700 border-collapse sm:max-md:w-screen m-auto relative">
 	<tr class="bg-primary-800">
 		<th>Prova do Enem</th><th>Nota mínima</th><th>Sua nota</th><th>Peso</th><th>Nota com peso</th>
 	</tr>
@@ -68,7 +68,7 @@
 	<td><i>Nota do estudante (B/A) = {calcularScoreFinal(arr).toFixed(2)}</i></td>
 </table>
 </div>
-<div id="resultado" class="bg-surface-700 sm:max-xl:mt-72 mr-0 pt-3 text-center text-tertiary-300 rounded-xl mt-12 h-screen text-2xl sm:max-lg:text-4xl fixed-bottom">
+<div id="resultado" class="variant-ghost-surface sm:max-xl:mt-72 mr-0 pt-3 text-center text-tertiary-300 rounded-xl mt-12 h-screen text-2xl sm:max-lg:text-4xl fixed-bottom">
 <h3>Com base nos dados entre 2020 e 2023</h3>
 {#each mathGrade as m}
 	<p>Caso você tivesse acertado {m[0]} questões em matemática sua nota seria:</p>
