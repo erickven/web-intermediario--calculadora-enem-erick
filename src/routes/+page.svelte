@@ -37,29 +37,29 @@
 		return calcularScoreFinal(simuArr);
 	}
 </script>
-<body class="bg-slate-950 text-white-500 text-xl text-zinc-200 flex-col space-between">
+<body class="text-tertiary-500 text-xl flex-col space-between sm:max-md:flex-row" data-theme="gold-nouveau">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="bg-slate-900 py-3 sm:max-lg:h-12"><h1 class="text-2xl px-4"><strong>Calculadora do ENEM</strong></h1></div>
+<div class="bg-surface-700 py-5 sm:max-lg:h-12 w-screen fixed-top"><h1 class="text-2xl px-4"><strong>Calculadora do ENEM</strong></h1></div>
 <p class="py-3 px-4 mb-12">
 	Esta calculadora serve para você entender que se tivesse aprendido matemática não teria tirado
 	essa nota paia 💩
 </p>
-<div id="tabelas" class="pl-7 mb-12">
-<table class="border-2 border-slate-900 border-collapse">
-	<tr class="bg-slate-800">
+<div id="tabelas" class="pl-7 mb-12 flex-center">
+<table class="border-2 border-surface-700 border-collapse">
+	<tr class="bg-primary-800">
 		<th>Prova do Enem</th><th>Nota mínima</th><th>Sua nota</th><th>Peso</th><th>Nota com peso</th>
 	</tr>
 	{#each arr as materia}
 		<tr class="sm:max-xl:table-fixed text-center">
 			<td class="">{materia.prova}</td>
-			<td class=""><input type="number" class="rounded-lg pt-3 flex-col bg-slate-600 m-1 sm:max-lg:h-16" placeholder="0.01" bind:value={materia.minGrade} /></td>
-			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-slate-600 sm:max-lg:h-16" placeholder="780.00" bind:value={materia.nota} /></td>
-			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-slate-600 sm:max-lg:h-16" placeholder="1.50" bind:value={materia.peso} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col bg-surface-800 m-1 sm:max-lg:h-16" placeholder="0.01" bind:value={materia.minGrade} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-surface-800 sm:max-lg:h-16" placeholder="780.00" bind:value={materia.nota} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-surface-800 sm:max-lg:h-16" placeholder="1.50" bind:value={materia.peso} /></td>
 			<td>{calcularNota(materia)}</td>
 		</tr>
 	{/each}
 
-	<tr>
+	<tr class="text-primary-700">
 		<td /><td /><td>Total</td><td>Total</td>
 	</tr>
 	<tr>
@@ -68,13 +68,14 @@
 	<td><i>Nota do estudante (B/A) = {calcularScoreFinal(arr).toFixed(2)}</i></td>
 </table>
 </div>
-<div id="resultado" class="sm:max-xl:mt-72 mr-0 variant-ringed-surface pt-3 text-center bg-slate-900 rounded-xl mt-12 h-screen text-2xl sm:max-lg:text-4xl">
+<div id="resultado" class="bg-surface-700 sm:max-xl:mt-72 mr-0 pt-3 text-center text-tertiary-300 rounded-xl mt-12 h-screen text-2xl sm:max-lg:text-4xl fixed-bottom">
 <h3>Com base nos dados entre 2020 e 2023</h3>
 {#each mathGrade as m}
 	<p>Caso você tivesse acertado {m[0]} questões em matemática sua nota seria:</p>
 	Entre {calcularSimulation(arr, m[1]).toFixed(2)} e {calcularSimulation(arr, m[3]).toFixed(2)}
 	<br>
 	com média de {calcularSimulation(arr, m[2]).toFixed(2)}
+
 {/each}
 </div>
 </body>
