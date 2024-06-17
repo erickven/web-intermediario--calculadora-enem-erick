@@ -42,7 +42,7 @@
 <div class="bg-surface-100-800-token py-5 sm:max-lg:h-12 w-screen shadow-xl shadow-surface-950"><h1 class="text-center text-2xl px-4 font-serif"><strong>Calculadora do ENEM</strong></h1></div>
 <p class="py-3 px-4 mb-12">
 	Esta calculadora serve para você entender que se tivesse aprendido matemática não teria tirado
-	essa nota paia.
+	essa nota paia 😹
 </p>
 <div id="tabelas" class="pl-7 mb-12 inline-block sm:max-lg:w-52">
 <table class="border-2 border-surface-700 border-collapse sm:max-lg:w-2/4 m-auto relative">
@@ -52,9 +52,9 @@
 	{#each arr as materia}
 		<tr class="sm:max-xl:table-fixed text-center">
 			<td class="">{materia.prova}</td>
-			<td class=""><input type="number" class="rounded-lg pt-3 flex-col bg-surface-800 m-1 sm:max-lg:h-16 md:max-lg:w-64 md:w-40 text-center" placeholder="0.01" bind:value={materia.minGrade} /></td>
-			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-surface-800 sm:max-lg:h-16 md:max-lg:w-64 md:w-40 text-center" placeholder="780.00" bind:value={materia.nota} /></td>
-			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-surface-800 sm:max-lg:h-16 md:max-lg:w-64 md:w-40 text-center" placeholder="1.50" bind:value={materia.peso} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col bg-surface-800 m-1 sm:max-lg:h-16 max-[900px]:w-20 min-[900px]:w-64 text-center" placeholder="0.01" bind:value={materia.minGrade} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-surface-800 sm:max-lg:h-16 max-[900px]:w-20 min-[900px]:w-64 text-center" placeholder="780.00" bind:value={materia.nota} /></td>
+			<td class=""><input type="number" class="rounded-lg pt-3 flex-col m-1 bg-surface-800 sm:max-lg:h-16 max-[900px]:w-20 min-[900px]:w-64 text-center" placeholder="1.50" bind:value={materia.peso} /></td>
 			<td>{calcularNota(materia)}</td>
 		</tr>
 	{/each}
